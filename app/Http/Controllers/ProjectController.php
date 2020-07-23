@@ -17,20 +17,26 @@ class ProjectController extends Controller
 
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
    
     public function store(Request $request)
     {
-        //
+        Project::create([
+            'title' => request('title'),
+            'url' => request('url'),
+            'description' => request('description'),
+        ]);
+
+        return redirect()->route('projects.index');
     }
 
     
-    public function show($id)
+    public function show(Project $project)
     {
         return view('projects.show', [
-            'project' => Project::findOrFail($id)
+            'project' => $project
         ]);
     }
 
