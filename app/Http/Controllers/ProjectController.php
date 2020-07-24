@@ -22,7 +22,6 @@ class ProjectController extends Controller
             'project'=> new Project
         ]);
     }
-
    
     public function store(SaveProjectRequest $request)
     {
@@ -31,7 +30,6 @@ class ProjectController extends Controller
 
         return redirect()->route('projects.index');
     }
-
     
     public function show(Project $project)
     {
@@ -40,7 +38,6 @@ class ProjectController extends Controller
         ]);
     }
 
-    
     public function edit(Project $project)
     {
         return view('projects.edit', [
@@ -48,14 +45,12 @@ class ProjectController extends Controller
         ]);
     }
 
-    
     public function update(Project $project, SaveProjectRequest $request)
     {
         $project->update( $request->validated() );
 
         return redirect()->route('projects.show', $project);
     }
-
    
     public function destroy(Project $project)
     {
