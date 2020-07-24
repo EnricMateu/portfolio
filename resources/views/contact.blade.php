@@ -4,6 +4,7 @@
 
 @section('content')
     <h1>@lang('Contact')</h1>
+
     <form method="POST" action="{{ route('contact') }}">
         @csrf
         <input name="name" placeholder="Nombre..." value="{{ old('name') }}"> <br>

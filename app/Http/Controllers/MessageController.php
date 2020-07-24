@@ -18,6 +18,6 @@ class MessageController extends Controller
 
         Mail::to('xaxeu@hotmail.com')->queue(new MessageReceived($msg));
 
-        return 'Mensaje enviado';
+        return back()->with('status', 'Recibimos su mensaje, le responderemos asap');
     }
 }
