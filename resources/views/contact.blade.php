@@ -10,6 +10,7 @@
             <form class="bg-white shadow rounded py-3 px-4" method="POST" action="{{ route('contact') }}">
                 @csrf
                 <h1 class="display-4" >@lang('Contact')</h1>
+                <hr>
                 <div class="form-group">
                     <label for="name"></label>
                     <input class="form-control bg-light shadow-sm 
